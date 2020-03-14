@@ -1,5 +1,6 @@
 const { assert } = require ('chai');
 const getFactorial = require ('../Factorial');
+const makeCounter = require ('../counter');
 describe('getFactorial', () => {
     it('should be defined', () => {
         assert.isDefined(getFactorial, 'function has been defined')
@@ -90,6 +91,21 @@ describe('getFactorial', () => {
         const expected = 720;
 
         const actual = getFactorial(num);
+
+        assert.deepEqual(actual, expected);
+    });
+});
+
+describe('makeCounter', () => {
+    it('function makeCounter defined', () => {
+        assert.isDefined(makeCounter);
+    });
+
+    it('makeCounter works correctly', () => {
+        const count = 1;
+        const expected = 1;
+
+        const actual = counter();
 
         assert.deepEqual(actual, expected);
     });
