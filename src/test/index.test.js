@@ -103,7 +103,6 @@ describe('makeCounter', () => {
 
     it('makeCounter works correctly', () => {
         let counter = makeCounter();
-        const count = 1;
         const expected = 1;
 
         const actual = counter();

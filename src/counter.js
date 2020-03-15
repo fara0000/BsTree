@@ -5,6 +5,4 @@ const makeCounter = () => {
     };
 }
 
-let counter = makeCounter();
-
 module.exports = makeCounter;
