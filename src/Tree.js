@@ -51,3 +51,18 @@ function toArrayNode(node) {
 
     return [...left, node.value, ...right];
 };
+
+BST.prototype.toString = function() {
+    return toStringNode(this.root);
+};
+
+function toStringNode(node) {
+    if (!node) {
+        return '';
+    }
+
+    const left = toStringNode(node.left);
+    const right = toStringNode(node.right);
+
+    return `${left + node.value + ', ' + right}`;
+};
