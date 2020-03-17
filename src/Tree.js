@@ -36,3 +36,33 @@ BST.prototype.init = function (array) {
 BST.prototype.clearBST = function () {
     this.root = null;
 };
+
+BST.prototype.toArray = function() {
+    return toArrayNode(this.root);
+};
+
+function toArrayNode(node) {
+    if (!node) {
+        return [];
+    }
+
+    const left = toArrayNode(node.left);
+    const right = toArrayNode(node.right);
+
+    return [...left, node.value, ...right];
+};
+
+BST.prototype.toString = function() {
+    return toStringNode(this.root);
+};
+
+function toStringNode(node) {
+    if (!node) {
+        return '';
+    }
+
+    const left = toStringNode(node.left);
+    const right = toStringNode(node.right);
+
+    return `${left + node.value + ', ' + right}`;
+};
