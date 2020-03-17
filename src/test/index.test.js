@@ -319,3 +319,20 @@ describe('Binary Search Tree tests', () => {
         });
     });
 })
+
+const makeCounter = require ('../factorial');
+
+describe('makeCounter', () => {
+    it('function makeCounter defined', () => {
+        assert.isDefined(makeCounter);
+    });
+
+    it('makeCounter works correctly', () => {
+        const count = 1;
+        const expected = 1;
+
+        const actual = counter();
+
+        assert.deepEqual(actual, expected);
+    });
+}); 

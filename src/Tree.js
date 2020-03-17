@@ -1,4 +1,4 @@
-function Node(value) {
+function Node (value) {
     this.value = value;
     this.left = null;
     this.right = null;
@@ -73,43 +73,25 @@ BST.prototype.getSize = function() {
     return this.size;
 };
 
-// BST.prototype.Delete = function(value) {
-//     let removeNode = function(node, value) {
-//     if (node == null) {
-//     return null;
-//     }
-//     if (value == node.value) {
-//     //if node has no children
-//     if (node.left == null && node.right == null) {
-//     return null;
-//     }
-//     //if node has no left child
-//     if (node.left == null) {
-//     return node.right;
-//     }
-//     //if node has no right child
-//     if (node.right == null) {
-//     return node.left;
-//     }
-//     //node has two children
-//     var tempNode = node.right;
-//     while (tempNode.left !== null) {
-//     tempNode = tempNode.left;
-//     }
-//     node.value = tempNode.value;
-//     node.right = removeNode (node.right, tempNode.value);
-//     return node;
-//     } else if (value < node.value) {
-//     node.left = removeNode (node.left, value);
-//     return node;
-//     } else {
-//     node.right = removeNode (node.right, value);
-//     return node;
-//     }
-//     }
-//     this.root = removeNode(this.root, value);
-//     };
+function BST () {
+    this.root = null;
+};
 
+BST.prototype.addNode = function (value) {
+    if (!value && value !== 0) {
+        return '';
+    }
 
+    this.root = add(this.root, value);
+    function add(node, value) {
+        if (!node) {
+            return new Node(value);
+        } else if (value < node.value) {
+            node.left = add(node.left, value);
+        } else {
+            node.right = add(node.right, value);
+        }
 
-
+        return node;
+    }
+};
