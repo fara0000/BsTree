@@ -4,12 +4,3 @@ const getFactorial = (number) => {
 };
 
 module.exports = getFactorial;
-
-const makeCounter = () => {
-    let count = 1;
-    return () => {
-        return count++;
-    };
-};
-
-module.exports = makeCounter;
